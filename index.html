@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Addiction</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-mode">
+  <header class="navbar navbar-expand-lg">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a class="navbar-brand font-weight-bold" href="#">Coffee Addiction</a>
+      
+      <!-- Centered Nav Links -->
+      <div class="d-flex justify-content-center flex-grow-1">
+        <nav class="navbar-nav">
+          <a class="nav-item nav-link text-center" href="#">About</a>
+          <a class="nav-item nav-link text-center" href="#">Origins</a>
+          <a class="nav-item nav-link text-center" href="#">Sensory Analysis</a>
+          <a class="nav-item nav-link text-center" href="#">FAQ</a>
+          <a class="nav-item nav-link text-center" href="#">Contact</a>
+        </nav>
+      </div>
+
+      <!-- Dark Mode Toggle Text Button -->
+      <button id="darkModeToggle" class="btn btn-outline-secondary ml-2" onclick="toggleDarkMode()">Dark Mode</button>
+    </div>
+  </header>
+
+  <main class="container mt-4">
+    <div class="row">
+      <!-- Sidebar with Search and Categories -->
+      <div class="col-md-3">
+        <div class="mb-3">
+          <input type="text" id="search" class="form-control mb-2" placeholder="Keyword, Flavor Note, or P#">
+          <button onclick="clearSearch()" class="btn btn-dark w-100">Clear</button>
+        </div>
+        <div>
+          <h5>Category</h5>
+          <ul class="list-unstyled">
+            <li onclick="toggleCategory(this)" class="btn btn-secondary category-item w-100 mb-2">Origins</li>
+            <li onclick="toggleCategory(this)" class="btn btn-secondary category-item w-100 mb-2">Latest Favourites</li>
+            <li onclick="toggleCategory(this)" class="btn btn-secondary category-item w-100 mb-2">Community Select</li>
+            <li onclick="toggleCategory(this)" class="btn btn-secondary category-item w-100 mb-2">Farm Select</li>
+            <li onclick="toggleCategory(this)" class="btn btn-secondary category-item w-100 mb-2">Microlot</li>
+            <li onclick="toggleCategory(this)" class="btn btn-secondary category-item w-100 mb-2">Regional Select</li>
+            <li onclick="toggleCategory(this)" class="btn btn-secondary category-item w-100 mb-2">Signature Coffee</li>
+            <li onclick="toggleCategory(this)" class="btn btn-secondary category-item w-100 mb-2">New Arrivals</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="col-md-9">
+        <!-- Filter Buttons -->
+        <div class="btn-group mb-4" role="group">
+          <button type="button" class="btn btn-dark">All Spot Coffees</button>
+          <button type="button" class="btn btn-dark">All Afloat Coffees</button>
+          <button type="button" class="btn btn-dark">All Coffees at Origin</button>
+          <button type="button" class="btn btn-dark">Archive</button>
+        </div>
+
+        <!-- Offerings Section -->
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-4 mb-3">
+            <div class="card h-100 text-center">
+              <img src="images/brazil.jpg" class="card-img-top" alt="Brazil">
+              <div class="card-body">
+                <h5 class="card-title">Brazil</h5>
+                <p class="card-text">Temp text 1</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 mb-3">
+            <div class="card h-100 text-center">
+              <img src="images/colombia.jpg" class="card-img-top" alt="Colombia">
+              <div class="card-body">
+                <h5 class="card-title">Colombia</h5>
+                <p class="card-text">Temp text 2</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 mb-3">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <h5 class="card-title">Temp Country 3</h5>
+                <p class="card-text">Temp text 3</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 mb-3">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <h5 class="card-title">Temp Country 4</h5>
+                <p class="card-text">Temp text 4</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 mb-3">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <h5 class="card-title">Temp Country 5</h5>
+                <p class="card-text">Temp text 5</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 mb-3">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <h5 class="card-title">Temp Country 6</h5>
+                <p class="card-text">Temp text 6</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
