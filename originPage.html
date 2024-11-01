@@ -1,123 +1,96 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    color: #333;
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 1em;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .navbar .logo {
-    font-size: 1.2em;
-    font-weight: bold;
-  }
-  
-  .navbar nav a {
-    margin: 0 1em;
-    color: #333;
-    text-decoration: none;
-  }
-  
-  .customer-portal {
-    background-color: #cc0033;
-    color: white;
-    padding: 0.5em 1em;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    padding: 1em;
-  }
-  
-  .search-bar {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1em;
-  }
-  
-  .search-bar input {
-    padding: 0.5em;
-    border: 1px solid #ddd;
-    width: 200px;
-    margin-right: 0.5em;
-  }
-  
-  .search-bar button {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 0.5em;
-    cursor: pointer;
-  }
-  
-  .category-list {
-    margin-top: 1em;
-  }
-  
-  .category-list h3 {
-    font-size: 1.1em;
-    margin-top: 1em;
-  }
-  
-  .category-list ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .category-list li {
-    padding: 0.5em 0;
-    cursor: pointer;
-  }
-  
-  .filter-buttons {
-    display: flex;
-    gap: 0.5em;
-    margin-bottom: 1em;
-  }
-  
-  .filter-buttons button {
-    background-color: black;
-    color: white;
-    padding: 0.5em 1em;
-    cursor: pointer;
-  }
-  
-  .offerings {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-  }
-  
-  .origin-card {
-    width: 180px;
-    height: 180px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: #f7f7f7;
-    border: 1px solid #ddd;
-    padding: 1em;
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
-  
-  .origin-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .origin-card img {
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-  }
-  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Coffee Addiction</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-mode">
+  <!-- Navbar (Same structure as Origins Page) -->
+  <header class="navbar navbar-expand-lg">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a class="navbar-brand font-weight-bold" href="index.html">Coffee Addiction</a>
+
+      <!-- Burger Menu Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar Links with Dark Mode Toggle -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <nav class="navbar-nav text-center">
+          <a class="nav-item nav-link active" href="index.html">Home</a>
+          <a class="nav-item nav-link" href="originPage.html">Origins</a>
+          <a class="nav-item nav-link" href="#">Sensory Analysis</a>
+          <a class="nav-item nav-link" href="#">FAQ</a>
+          <a class="nav-item nav-link" href="#">Contact</a>
+        </nav>
+        <!-- Dark Mode Toggle Button (visible in both modes, positioned accordingly) -->
+        <button id="darkModeToggle" class="btn btn-outline-secondary ml-2 d-none d-lg-inline-block" onclick="toggleDarkMode()">Dark Mode</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dark Mode Toggle Button in Burger Menu -->
+  <div class="collapse navbar-collapse d-lg-none" id="navbarNav">
+    <button id="darkModeToggleMobile" class="btn btn-outline-secondary my-2 w-100" onclick="toggleDarkMode()">Dark Mode</button>
+  </div>
+
+  <!-- Main Content for Origins Page -->
+  <main class="container mt-5">
+    <div class="row">
+      <div class="col-12">
+        <!-- Profile 1 -->
+        <div class="profile-section d-flex mb-4">
+          <img src="images/profile1.png" alt="Farmer from Sunrise Valley Farm" class="profile-img mr-3">
+          <div>
+            <h3>Coffee 1</h3>
+            <p><strong>Farmer:</strong> John Doe</p>
+            <p><strong>Farm Name:</strong> Sunrise Valley Farm</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae orci nec ipsum egestas tempus.</p>
+          </div>
+        </div>
+        
+        <!-- Profile 2 -->
+        <div class="profile-section d-flex mb-4">
+          <img src="images/profile2.png" alt="Farmer from Mountain Top Estate" class="profile-img mr-3">
+          <div>
+            <h3>Coffee 2</h3>
+            <p><strong>Farmer:</strong> Maria Gonzalez</p>
+            <p><strong>Farm Name:</strong> Mountain Top Estate</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac arcu ac libero convallis vehicula.</p>
+          </div>
+        </div>
+
+        <!-- Profile 3-->
+        <div class="profile-section d-flex mb-4">
+          <img src="images/profile3.png" alt="Farmer from Mountain Top Estate" class="profile-img mr-3">
+          <div>
+            <h3>Coffee 3</h3>
+            <p><strong>Farmer:</strong> Maria Gonzalez</p>
+            <p><strong>Farm Name:</strong> Mountain Top Estate</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac arcu ac libero convallis vehicula.</p>
+          </div>
+        </div>
+
+        <!-- Profile 4 -->
+        <div class="profile-section d-flex mb-4">
+          <img src="images/profile4.png" alt="Farmer from Mountain Top Estate" class="profile-img mr-3">
+          <div>
+            <h3>Coffee 4</h3>
+            <p><strong>Farmer:</strong> Maria Gonzalez</p>
+            <p><strong>Farm Name:</strong> Mountain Top Estate</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac arcu ac libero convallis vehicula.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>
