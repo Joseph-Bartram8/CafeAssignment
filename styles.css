@@ -12,6 +12,7 @@ body.dark-mode {
 /* Navbar Styling */
 .navbar {
   background-color: #c8c8c8;
+  padding: 0.5rem 1rem;
 }
 
 .light-mode .navbar {
@@ -37,44 +38,67 @@ body.dark-mode {
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  flex-wrap: nowrap; /* Prevents items from wrapping */
 }
 
-/* Dark Mode Toggle */
-#darkModeToggle,
-#darkModeToggleMobile {
-  display: inline-block;
+/* Prevent Navbar Items from Being Squished on Small Screens */
+.collapse.navbar-collapse {
+  text-align: center;
+  flex-basis: 100%;
+  flex-grow: 1;
 }
 
-#darkModeToggle.d-lg-none {
-  display: none; /* Hide on larger screens */
+.navbar-nav .nav-item {
+  padding: 0 0.5rem;
+  white-space: nowrap; /* Prevents text from wrapping */
 }
 
-@media (min-width: 992px) {
-  #darkModeToggle.d-lg-none {
-    display: inline-block; /* Show in main navbar on large screens */
-  }
-  .navbar-collapse .btn-outline-secondary {
-    display: none; /* Hide Dark Mode toggle within dropdown */
+@media (max-width: 992px) {
+  /* Stack the nav items vertically on smaller screens */
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
 /* Burger Menu Button */
 .navbar-toggler {
-  position: absolute;
-  right: 15px;
-  top: 10px;
+  position: relative;
+  margin-right: 15px; /* Moves button slightly left */
   border: none;
-  background-color: transparent;
+  background: transparent;
   outline: none;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
 }
 
+/* Styling for each line of the burger menu */
 .navbar-toggler-icon {
-  background-color: #333;
-  border-radius: 4px;
-  width: 24px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
   height: 3px;
+  background-color: #333;
+  transition: all 0.3s ease;
+  border-radius: 2px;
 }
 
+/* Position the lines to align with the button */
+.line1 {
+  top: 0;
+}
+
+.line2 {
+  top: 10px;
+}
+
+.line3 {
+  top: 20px;
+}
+
+/* Dark mode colors */
 .light-mode .navbar-toggler-icon {
   background-color: #333;
 }
