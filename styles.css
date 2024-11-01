@@ -233,7 +233,7 @@ body.dark-mode {
 #profileDetails {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center !important;
   text-align: center;
   margin-top: 1rem;
 }
