@@ -203,6 +203,7 @@ body.dark-mode {
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1000;
+  padding: 1rem;
 }
 
 .profile-overlay.active {
@@ -212,13 +213,15 @@ body.dark-mode {
 .profile-content {
   background-color: #fff;
   color: #333;
-  padding: 20px;
+  padding: 30px;
   width: 90%;
-  max-width: 600px;
-  border-radius: 8px;
+  max-width: 800px;
+  border-radius: 10px;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   position: relative;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .dark-mode .profile-content {
@@ -226,14 +229,48 @@ body.dark-mode {
   color: #f5f5f5;
 }
 
-/* Close Button (X) Styling */
+/* Profile Details Styling */
+#profileDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Profile Image Styling */
+#profileDetails img {
+  width: 180px;
+  height: 180px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* Responsive Adjustments for Profile Content */
+@media (max-width: 576px) {
+  .profile-content {
+    padding: 20px;
+  }
+
+  #profileDetails img {
+    width: 80%;
+    max-width: 200px;
+    height: auto;
+  }
+}
+
+/* Close Button Styling */
 .close-btn {
   position: absolute;
   top: 10px;
   right: 15px;
   font-size: 24px;
   color: #333;
+  background: none;
+  border: none;
   cursor: pointer;
+  z-index: 10;
 }
 
 .light-mode .close-btn {
@@ -243,3 +280,4 @@ body.dark-mode {
 .dark-mode .close-btn {
   color: #f5f5f5;
 }
+
