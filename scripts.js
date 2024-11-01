@@ -3,13 +3,9 @@ function clearSearch() {
     document.getElementById("search").value = '';
   }
   
-  // Toggle category button active state with Bootstrap classes
+  // toggle category items
   function toggleCategory(element) {
-    const items = document.querySelectorAll(".category-item");
-    items.forEach(item => item.classList.remove("btn-dark", "text-white"));
-    items.forEach(item => item.classList.add("btn-secondary"));
-    element.classList.remove("btn-secondary");
-    element.classList.add("btn-dark", "text-white");
+    element.classList.toggle("active");
   }
   
   // Toggle Dark Mode
@@ -25,4 +21,27 @@ function clearSearch() {
       darkModeToggle.textContent = "Dark Mode";
     }
   }
+
+  function openProfile(profileName) {
+    const profileOverlay = document.getElementById("profileOverlay")
+    const profileDetails = document.getElementById("profileDetails")
+
+    profileDetails.innerHTML = `
+    <h3>${profileName} Farm/Farmer Profile</h3>
+    <p>Details about the coffee farm or farmer for ${profileName} will be displayed here</p>
+    `;
+
+    profileOverlay.classList.add("active");
+  }
+
+  // close Profile Overlay
+  function closeOverlay() {
+    document.getElementById("profileOverlay").classList.remove("active");
+  }
+
+  document.getElementById("closeOverlay").addEventListener("click", closeOverlay);
+
+  document.getElementById("profileOverlay").addEventListener("click", function (event) {
+    if (event.target === this) closeOverlay();
+  })
   

@@ -28,96 +28,76 @@
     </div>
   </header>
 
+  <!-- Profile Overlay -->
+  <div id="profileOverlay" class="profile-overlay">
+    <div class="profile-content">
+      <button id="closeOverlay" class="close-btn">&times;</button>
+      <div id="profileDetails">
+        <h3>Farm/Farmer Profile</h3>
+        <p>Temp Profile Description</p>
+      </div>
+    </div>
+  </div>
+
   <main class="container mt-4">
     <div class="row">
       <!-- Sidebar with Search and Categories -->
       <div class="col-md-3">
         <div class="mb-3">
-          <input type="text" id="search" class="form-control mb-2" placeholder="Keyword, Flavor Note, or P#">
+          <input type="text" id="search" class="form-control mb-2" placeholder="Keywords">
           <button onclick="clearSearch()" class="btn btn-dark w-100">Clear</button>
         </div>
-        <div>
+        <div class="category-list">
           <h5>Category</h5>
-          <ul class="list-unstyled">
-            <li onclick="toggleCategory(this)" class="btn btn-secondary category-item w-100 mb-2">Origins</li>
-            <li onclick="toggleCategory(this)" class="btn btn-secondary category-item w-100 mb-2">Latest Favourites</li>
-            <li onclick="toggleCategory(this)" class="btn btn-secondary category-item w-100 mb-2">Community Select</li>
-            <li onclick="toggleCategory(this)" class="btn btn-secondary category-item w-100 mb-2">Farm Select</li>
-            <li onclick="toggleCategory(this)" class="btn btn-secondary category-item w-100 mb-2">Microlot</li>
-            <li onclick="toggleCategory(this)" class="btn btn-secondary category-item w-100 mb-2">Regional Select</li>
-            <li onclick="toggleCategory(this)" class="btn btn-secondary category-item w-100 mb-2">Signature Coffee</li>
-            <li onclick="toggleCategory(this)" class="btn btn-secondary category-item w-100 mb-2">New Arrivals</li>
+          <ul">
+            <li onclick="toggleCategory(this)" class="btn w-100 mb-2 category-item">Origins</li>
+            <li onclick="toggleCategory(this)" class="btn w-100 mb-2 category-item">Latest Favourites</li>
+            <li onclick="toggleCategory(this)" class="btn w-100 mb-2 category-item">Community Select</li>
+            <li onclick="toggleCategory(this)" class="btn w-100 mb-2 category-item">Farm Select</li>
+            <li onclick="toggleCategory(this)" class="btn w-100 mb-2 category-item">Microlot</li>
+            <li onclick="toggleCategory(this)" class="btn w-100 mb-2 category-item">Regional Select</li>
+            <li onclick="toggleCategory(this)" class="btn w-100 mb-2 category-item">Signature Coffee</li>
+            <li onclick="toggleCategory(this)" class="btn w-100 mb-2 category-item">New Arrivals</li>
           </ul>
         </div>
       </div>
 
       <!-- Main Content -->
       <div class="col-md-9">
-        <!-- Filter Buttons -->
-        <div class="btn-group mb-4" role="group">
-          <button type="button" class="btn btn-dark">All Spot Coffees</button>
-          <button type="button" class="btn btn-dark">All Afloat Coffees</button>
-          <button type="button" class="btn btn-dark">All Coffees at Origin</button>
-          <button type="button" class="btn btn-dark">Archive</button>
-        </div>
-
-        <!-- Offerings Section -->
         <div class="row">
           <div class="col-12 col-sm-6 col-md-4 mb-3">
-            <div class="card h-100 text-center">
-              <img src="images/brazil.jpg" class="card-img-top" alt="Brazil">
+            <div class="card clickable-card h-100 text-center" onclick="openProfile('Farmer1')">
+              <img src="images/#" class="card-img-top" alt="Farmer 1">
               <div class="card-body">
-                <h5 class="card-title">Brazil</h5>
+                <h5 class="card-title">Farmer 1</h5>
                 <p class="card-text">Temp text 1</p>
               </div>
-            </div>
+            </div> 
           </div>
           <div class="col-12 col-sm-6 col-md-4 mb-3">
-            <div class="card h-100 text-center">
-              <img src="images/colombia.jpg" class="card-img-top" alt="Colombia">
+            <div class="card clickable-card h-100 text-center" onclick="openProfile('Farmer2')">
+              <img src="images/#" class="card-img-top" alt="Farmer 2">
               <div class="card-body">
-                <h5 class="card-title">Colombia</h5>
+                <h5 class="card-title">Farmer 2</h5>
                 <p class="card-text">Temp text 2</p>
               </div>
-            </div>
+            </div> 
           </div>
           <div class="col-12 col-sm-6 col-md-4 mb-3">
-            <div class="card h-100 text-center">
+            <div class="card clickable-card h-100 text-center" onclick="openProfile('Farmer3')">
+              <img src="images/#" class="card-img-top" alt="Farmer 3">
               <div class="card-body">
-                <h5 class="card-title">Temp Country 3</h5>
+                <h5 class="card-title">Farmer 3</h5>
                 <p class="card-text">Temp text 3</p>
               </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 mb-3">
-            <div class="card h-100 text-center">
-              <div class="card-body">
-                <h5 class="card-title">Temp Country 4</h5>
-                <p class="card-text">Temp text 4</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 mb-3">
-            <div class="card h-100 text-center">
-              <div class="card-body">
-                <h5 class="card-title">Temp Country 5</h5>
-                <p class="card-text">Temp text 5</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 mb-3">
-            <div class="card h-100 text-center">
-              <div class="card-body">
-                <h5 class="card-title">Temp Country 6</h5>
-                <p class="card-text">Temp text 6</p>
-              </div>
-            </div>
+            </div> 
           </div>
         </div>
       </div>
     </div>
   </main>
 
+  <script src="https:code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="scripts.js"></script>
 </body>
 </html>
